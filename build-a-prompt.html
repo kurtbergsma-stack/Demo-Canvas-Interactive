@@ -83,10 +83,10 @@
     padding: 10px 14px;
     cursor: grab;
     user-select: none;
-    transition: opacity 0.15s;
     font-size: 0.875rem;
     color: #3C3489;
     line-height: 1.4;
+    transition: opacity 0.15s;
   }
 
   .block:active { cursor: grabbing; }
@@ -139,7 +139,7 @@
     border: none;
     cursor: pointer;
     font-size: 14px;
-    color: #aaa;
+    color: #9994d4;
     line-height: 1;
     padding: 2px 4px;
     border-radius: 4px;
@@ -197,7 +197,6 @@
     font-size: 0.85rem;
     color: #333;
     resize: none;
-    cursor: text;
   }
 
   .copy-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
@@ -322,6 +321,9 @@ const BLOCKS_DATA = [
   { id: 'dist3',      text: 'Generate 20 questions on a random topic.', correct: false },
 ];
 
+const CORRECT_CODE = 'BP42-Q7K2M9B4Z1-18';
+const ID_MAP = { role:'Q7', context:'K2', task:'M9', format:'B4', constraint:'Z1', dist1:'X3', dist2:'W8', dist3:'V5' };
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -332,17 +334,13 @@ function shuffle(arr) {
 }
 
 const BLOCKS = shuffle(BLOCKS_DATA);
-const CORRECT_CODE = 'BP42-Q7K2M9B4Z1-18';
-
-const ID_MAP = { role:'Q7', context:'K2', task:'M9', format:'B4', constraint:'Z1', dist1:'X3', dist2:'W8', dist3:'V5' };
+let droppedIds = [];
+let dragId = null;
 
 function encodeAnswer(ids) {
   const salt = Math.floor(Math.random() * 90 + 10);
   return 'BP' + salt + '-' + ids.map(id => ID_MAP[id]).join('') + '-' + (ids.length * salt % 97);
 }
-
-let droppedIds = [];
-let dragId = null;
 
 function renderBlocks() {
   const grid = document.getElementById('blocksGrid');
@@ -350,7 +348,7 @@ function renderBlocks() {
   BLOCKS.forEach(b => {
     const used = droppedIds.includes(b.id);
     const el = document.createElement('div');
-    el.className = `block${used ? ' used' : ''}`;
+    el.className = 'block' + (used ? ' used' : '');
     el.draggable = !used;
     el.textContent = b.text;
     el.addEventListener('dragstart', e => {
@@ -418,9 +416,8 @@ zone.addEventListener('drop', e => {
 
 function generateCode() {
   if (droppedIds.length === 0) return;
-  const correctIds = ['role','context','task','format','constraint'];
-  const allCorrect = droppedIds.length === 5
-    && correctIds.every((id, i) => droppedIds[i] === id);
+  const correctOrder = ['role','context','task','format','constraint'];
+  const allCorrect = droppedIds.length === 5 && correctOrder.every((id, i) => droppedIds[i] === id);
   document.getElementById('codeArea').value = allCorrect ? CORRECT_CODE : encodeAnswer(droppedIds);
   document.getElementById('resultBox').classList.add('visible');
   document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
