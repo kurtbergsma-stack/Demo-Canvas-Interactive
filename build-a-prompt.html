@@ -15,14 +15,8 @@
     padding: 2rem 1rem;
   }
 
-  .container {
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .header {
-    margin-bottom: 2rem;
-  }
+  .container { max-width: 820px; margin: 0 auto; }
+  .header { margin-bottom: 2rem; }
 
   .badge {
     display: inline-block;
@@ -37,19 +31,8 @@
     margin-bottom: 0.75rem;
   }
 
-  h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-    max-width: 600px;
-  }
+  h1 { font-size: 1.6rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+  .subtitle { font-size: 0.95rem; color: #555; line-height: 1.6; max-width: 600px; }
 
   .instructions {
     background: #fff;
@@ -63,7 +46,6 @@
   }
 
   .instructions strong { color: #1a1a1a; }
-
   ol { padding-left: 1.25rem; }
   ol li { margin-bottom: 0.3rem; }
 
@@ -74,9 +56,7 @@
     margin-bottom: 2rem;
   }
 
-  @media (max-width: 600px) {
-    .activity { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 600px) { .activity { grid-template-columns: 1fr; } }
 
   .panel {
     background: #fff;
@@ -94,53 +74,24 @@
     margin-bottom: 1rem;
   }
 
-  .blocks-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .blocks-grid { display: flex; flex-direction: column; gap: 8px; }
 
   .block {
-    background: #f8f7f4;
-    border: 1.5px solid #e0ddd6;
+    background: #EEEDFE;
+    border: 1.5px solid #AFA9EC;
     border-radius: 8px;
     padding: 10px 14px;
     cursor: grab;
     user-select: none;
-    transition: border-color 0.15s, background 0.15s, opacity 0.15s;
+    transition: opacity 0.15s;
     font-size: 0.875rem;
-  }
-
-  .block:active { cursor: grabbing; }
-
-  .block .block-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 3px;
-  }
-
-  .block .block-text {
-    color: #333;
+    color: #3C3489;
     line-height: 1.4;
   }
 
-  .block.type-role { border-color: #AFA9EC; background: #EEEDFE; }
-  .block.type-role .block-label { color: #534AB7; }
-  .block.type-context { border-color: #5DCAA5; background: #E1F5EE; }
-  .block.type-context .block-label { color: #0F6E56; }
-  .block.type-task { border-color: #F0997B; background: #FAECE7; }
-  .block.type-task .block-label { color: #993C1D; }
-  .block.type-format { border-color: #85B7EB; background: #E6F1FB; }
-  .block.type-format .block-label { color: #185FA5; }
-  .block.type-constraint { border-color: #FAC775; background: #FAEEDA; }
-  .block.type-constraint .block-label { color: #854F0B; }
-  .block.type-distractor { border-color: #e0ddd6; background: #f8f7f4; }
-  .block.type-distractor .block-label { color: #888; }
-
+  .block:active { cursor: grabbing; }
   .block.dragging { opacity: 0.4; }
-  .block.used { opacity: 0.35; cursor: not-allowed; }
+  .block.used { opacity: 0.3; cursor: not-allowed; }
 
   .drop-zone {
     min-height: 320px;
@@ -154,10 +105,7 @@
     position: relative;
   }
 
-  .drop-zone.drag-over {
-    border-color: #1D9E75;
-    background: #f0fdf7;
-  }
+  .drop-zone.drag-over { border-color: #1D9E75; background: #f0fdf7; }
 
   .drop-zone-empty {
     position: absolute;
@@ -170,21 +118,20 @@
     pointer-events: none;
   }
 
-  .drop-zone-empty .arrow {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 6px;
-  }
+  .drop-zone-empty .arrow { font-size: 1.5rem; display: block; margin-bottom: 6px; }
 
   .dropped-block {
+    background: #EEEDFE;
+    border: 1.5px solid #AFA9EC;
     border-radius: 8px;
-    padding: 10px 14px;
+    padding: 10px 36px 10px 14px;
     font-size: 0.875rem;
     position: relative;
-    cursor: default;
+    color: #3C3489;
+    line-height: 1.4;
   }
 
-  .dropped-block .remove-btn {
+  .remove-btn {
     position: absolute;
     top: 6px;
     right: 8px;
@@ -196,16 +143,12 @@
     line-height: 1;
     padding: 2px 4px;
     border-radius: 4px;
+    font-family: inherit;
   }
 
-  .dropped-block .remove-btn:hover { color: #e24b4a; background: #fcebeb; }
+  .remove-btn:hover { color: #e24b4a; background: #fcebeb; }
 
-  .controls {
-    display: flex;
-    gap: 8px;
-    margin-top: 0.75rem;
-    flex-wrap: wrap;
-  }
+  .controls { display: flex; gap: 8px; margin-top: 0.75rem; flex-wrap: wrap; }
 
   button {
     font-family: inherit;
@@ -217,19 +160,9 @@
     transition: background 0.15s;
   }
 
-  .btn-primary {
-    background: #1D9E75;
-    border-color: #1D9E75;
-    color: #fff;
-    font-weight: 600;
-  }
+  .btn-primary { background: #1D9E75; border-color: #1D9E75; color: #fff; font-weight: 600; }
   .btn-primary:hover { background: #0F6E56; }
-
-  .btn-secondary {
-    background: #fff;
-    border-color: #d0cdc6;
-    color: #444;
-  }
+  .btn-secondary { background: #fff; border-color: #d0cdc6; color: #444; }
   .btn-secondary:hover { background: #f8f7f4; }
 
   .result-box {
@@ -249,26 +182,10 @@
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: #888;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
-  .feedback {
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-
-  .feedback.correct { background: #E1F5EE; color: #085041; border: 1px solid #5DCAA5; }
-  .feedback.partial { background: #FAEEDA; color: #633806; border: 1px solid #FAC775; }
-  .feedback.incorrect { background: #FCEBEB; color: #501313; border: 1px solid #F09595; }
-
-  .code-label {
-    font-size: 0.8rem;
-    color: #888;
-    margin-bottom: 6px;
-  }
+  .code-label { font-size: 0.85rem; color: #555; margin-bottom: 8px; }
 
   .code-area {
     width: 100%;
@@ -277,25 +194,14 @@
     border-radius: 8px;
     padding: 12px;
     font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #333;
     resize: none;
     cursor: text;
   }
 
-  .copy-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 8px;
-  }
-
-  .copy-msg {
-    font-size: 0.8rem;
-    color: #1D9E75;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
+  .copy-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+  .copy-msg { font-size: 0.8rem; color: #1D9E75; opacity: 0; transition: opacity 0.3s; }
   .copy-msg.show { opacity: 1; }
 
   .scenario-box {
@@ -306,7 +212,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .scenario-box .scenario-label {
+  .scenario-label {
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -315,12 +221,7 @@
     margin-bottom: 0.5rem;
   }
 
-  .scenario-box p {
-    font-size: 0.9rem;
-    color: #333;
-    line-height: 1.6;
-  }
-
+  .scenario-box p { font-size: 0.9rem; color: #333; line-height: 1.6; }
   .scenario-box strong { color: #1a1a1a; }
 
   .prompt-preview {
@@ -336,7 +237,7 @@
     font-style: italic;
   }
 
-  .prompt-preview .preview-label {
+  .preview-label {
     font-style: normal;
     font-size: 0.7rem;
     font-weight: 700;
@@ -346,10 +247,7 @@
     margin-bottom: 6px;
   }
 
-  .prompt-preview .preview-empty {
-    color: #ccc;
-    font-style: italic;
-  }
+  .preview-empty { color: #ccc; font-style: italic; }
 </style>
 </head>
 <body>
@@ -365,15 +263,15 @@
     <ol>
       <li>Read the scenario carefully.</li>
       <li>Drag blocks from the left panel into the Prompt Builder on the right — in the order they should appear.</li>
-      <li>Click <strong>Check My Prompt</strong> when done.</li>
-      <li>Copy the answer code and paste it into the Canvas answer box.</li>
+      <li>Click <strong>Generate Code</strong> when done.</li>
+      <li>Copy the code and paste it into the Canvas answer box.</li>
     </ol>
   </div>
 
   <div class="scenario-box">
     <div class="scenario-label">Scenario</div>
     <p>An instructor wants to use AI to <strong>create a short quiz</strong> for their online course. They need 5 multiple-choice questions about <strong>active learning strategies</strong>, written for <strong>undergraduate students</strong>, with each question having 4 answer options and the correct answer marked.</p>
-    <div class="prompt-preview" id="promptPreview">
+    <div class="prompt-preview">
       <div class="preview-label">Your prompt so far</div>
       <span class="preview-empty" id="previewEmpty">Add blocks to see your prompt build here...</span>
       <span id="previewText"></span>
@@ -395,17 +293,16 @@
         </div>
       </div>
       <div class="controls">
-        <button class="btn-primary" onclick="checkPrompt()">Check My Prompt</button>
+        <button class="btn-primary" onclick="generateCode()">Generate Code</button>
         <button class="btn-secondary" onclick="resetActivity()">Reset</button>
       </div>
     </div>
   </div>
 
   <div class="result-box" id="resultBox">
-    <h3>Result</h3>
-    <div class="feedback" id="feedbackMsg"></div>
-    <div class="code-label">Your answer code — copy and paste this into Canvas:</div>
-    <textarea class="code-area" id="codeArea" rows="3" readonly></textarea>
+    <h3>Your Answer Code</h3>
+    <div class="code-label">Copy this code and paste it into the Canvas answer box:</div>
+    <textarea class="code-area" id="codeArea" rows="2" readonly></textarea>
     <div class="copy-row">
       <button class="btn-secondary" onclick="copyCode()">Copy Code</button>
       <span class="copy-msg" id="copyMsg">Copied!</span>
@@ -414,16 +311,35 @@
 </div>
 
 <script>
-const BLOCKS = [
-  { id: 'role', type: 'role', label: 'Role', text: 'You are an expert instructional designer and educator.', correct: true, order: 1 },
-  { id: 'context', type: 'context', label: 'Context', text: 'The course is for undergraduate students learning about active learning strategies.', correct: true, order: 2 },
-  { id: 'task', type: 'task', label: 'Task', text: 'Create 5 multiple-choice questions about active learning strategies.', correct: true, order: 3 },
-  { id: 'format', type: 'format', label: 'Format', text: 'Each question should have 4 answer options. Mark the correct answer with an asterisk (*).', correct: true, order: 4 },
-  { id: 'constraint', type: 'constraint', label: 'Constraint', text: 'Keep language clear and accessible for undergraduates. Avoid jargon.', correct: true, order: 5 },
-  { id: 'dist1', type: 'distractor', label: 'Distractor', text: 'Make the questions as hard as possible to trick students.', correct: false },
-  { id: 'dist2', type: 'distractor', label: 'Distractor', text: 'Write the questions in a formal academic tone with discipline-specific terminology.', correct: false },
-  { id: 'dist3', type: 'distractor', label: 'Distractor', text: 'Generate 20 questions on a random topic.', correct: false },
+const BLOCKS_DATA = [
+  { id: 'role',       text: 'You are an expert instructional designer and educator.', correct: true, order: 1 },
+  { id: 'context',    text: 'The course is for undergraduate students learning about active learning strategies.', correct: true, order: 2 },
+  { id: 'task',       text: 'Create 5 multiple-choice questions about active learning strategies.', correct: true, order: 3 },
+  { id: 'format',     text: 'Each question should have 4 answer options. Mark the correct answer with an asterisk (*).', correct: true, order: 4 },
+  { id: 'constraint', text: 'Keep language clear and accessible for undergraduates. Avoid jargon.', correct: true, order: 5 },
+  { id: 'dist1',      text: 'Make the questions as hard as possible to trick students.', correct: false },
+  { id: 'dist2',      text: 'Write the questions in a formal academic tone with discipline-specific terminology.', correct: false },
+  { id: 'dist3',      text: 'Generate 20 questions on a random topic.', correct: false },
 ];
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const BLOCKS = shuffle(BLOCKS_DATA);
+const CORRECT_CODE = 'BP42-Q7K2M9B4Z1-18';
+
+const ID_MAP = { role:'Q7', context:'K2', task:'M9', format:'B4', constraint:'Z1', dist1:'X3', dist2:'W8', dist3:'V5' };
+
+function encodeAnswer(ids) {
+  const salt = Math.floor(Math.random() * 90 + 10);
+  return 'BP' + salt + '-' + ids.map(id => ID_MAP[id]).join('') + '-' + (ids.length * salt % 97);
+}
 
 let droppedIds = [];
 let dragId = null;
@@ -432,13 +348,13 @@ function renderBlocks() {
   const grid = document.getElementById('blocksGrid');
   grid.innerHTML = '';
   BLOCKS.forEach(b => {
+    const used = droppedIds.includes(b.id);
     const el = document.createElement('div');
-    el.className = `block type-${b.type}${droppedIds.includes(b.id) ? ' used' : ''}`;
-    el.draggable = !droppedIds.includes(b.id);
-    el.dataset.id = b.id;
-    el.innerHTML = `<div class="block-label">${b.label}</div><div class="block-text">${b.text}</div>`;
+    el.className = `block${used ? ' used' : ''}`;
+    el.draggable = !used;
+    el.textContent = b.text;
     el.addEventListener('dragstart', e => {
-      if (droppedIds.includes(b.id)) { e.preventDefault(); return; }
+      if (used) { e.preventDefault(); return; }
       dragId = b.id;
       el.classList.add('dragging');
     });
@@ -449,21 +365,25 @@ function renderBlocks() {
 
 function renderDropZone() {
   const zone = document.getElementById('dropZone');
-  const empty = document.getElementById('dropEmpty');
   zone.querySelectorAll('.dropped-block').forEach(e => e.remove());
-  empty.style.display = droppedIds.length ? 'none' : 'block';
+  document.getElementById('dropEmpty').style.display = droppedIds.length ? 'none' : 'block';
   droppedIds.forEach(id => {
-    const b = BLOCKS.find(x => x.id === id);
+    const b = BLOCKS_DATA.find(x => x.id === id);
     const el = document.createElement('div');
-    el.className = `dropped-block block type-${b.type}`;
-    el.innerHTML = `<div class="block-label">${b.label}</div><div class="block-text">${b.text}</div><button class="remove-btn" onclick="removeBlock('${id}')">✕</button>`;
+    el.className = 'dropped-block';
+    el.textContent = b.text;
+    const btn = document.createElement('button');
+    btn.className = 'remove-btn';
+    btn.textContent = '✕';
+    btn.onclick = () => removeBlock(id);
+    el.appendChild(btn);
     zone.appendChild(el);
   });
   updatePreview();
 }
 
 function updatePreview() {
-  const correctDropped = droppedIds.filter(id => BLOCKS.find(b => b.id === id).correct);
+  const correctDropped = droppedIds.filter(id => BLOCKS_DATA.find(b => b.id === id).correct);
   const previewText = document.getElementById('previewText');
   const previewEmpty = document.getElementById('previewEmpty');
   if (correctDropped.length === 0) {
@@ -471,7 +391,7 @@ function updatePreview() {
     previewText.textContent = '';
   } else {
     previewEmpty.style.display = 'none';
-    previewText.textContent = correctDropped.map(id => BLOCKS.find(b => b.id === id).text).join(' ');
+    previewText.textContent = correctDropped.map(id => BLOCKS_DATA.find(b => b.id === id).text).join(' ');
   }
 }
 
@@ -496,43 +416,14 @@ zone.addEventListener('drop', e => {
   dragId = null;
 });
 
-function checkPrompt() {
-  const correctOrder = [1,2,3,4,5];
-  const droppedCorrect = droppedIds.filter(id => BLOCKS.find(b => b.id === id).correct);
-  const droppedDistractors = droppedIds.filter(id => !BLOCKS.find(b => b.id === id).correct);
-  const droppedOrders = droppedCorrect.map(id => BLOCKS.find(b => b.id === id).order);
-  const allCorrectIncluded = droppedCorrect.length === 5;
-  const noDistractors = droppedDistractors.length === 0;
-  const inOrder = JSON.stringify(droppedOrders) === JSON.stringify([...droppedOrders].sort((a,b)=>a-b));
-
-  let score, feedback, code;
-
-  if (allCorrectIncluded && noDistractors && inOrder) {
-    score = 'correct';
-    feedback = '✓ Excellent! Your prompt includes all 5 essential components in a logical order: Role, Context, Task, Format, and Constraint. This structure gives the AI everything it needs to produce useful output.';
-    code = 'PROMPT:R1-C2-T3-F4-X5:SCORE=100';
-  } else if (droppedDistractors.length > 0) {
-    score = 'incorrect';
-    feedback = `✗ Your prompt includes ${droppedDistractors.length} block(s) that would hurt the output — check for distractors. A good prompt is intentional about every instruction it includes.`;
-    code = `PROMPT:${droppedIds.join('-')}:SCORE=0`;
-  } else if (droppedCorrect.length >= 3 && noDistractors) {
-    score = 'partial';
-    feedback = `◑ Good start — you included ${droppedCorrect.length} of 5 correct components. ${droppedCorrect.length < 5 ? 'Look for any missing blocks.' : ''} ${!inOrder ? 'Also check the order — prompts generally work best going from Role → Context → Task → Format → Constraint.' : ''}`;
-    code = `PROMPT:${droppedIds.join('-')}:SCORE=${Math.round((droppedCorrect.length/5)*70)}`;
-  } else {
-    score = 'incorrect';
-    feedback = '✗ Not quite — make sure you are selecting the blocks that help the AI understand who it is, what the context is, what to do, how to format it, and any constraints.';
-    code = `PROMPT:${droppedIds.join('-')}:SCORE=20`;
-  }
-
-  const box = document.getElementById('resultBox');
-  const msg = document.getElementById('feedbackMsg');
-  const area = document.getElementById('codeArea');
-  msg.className = `feedback ${score}`;
-  msg.textContent = feedback;
-  area.value = code;
-  box.classList.add('visible');
-  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+function generateCode() {
+  if (droppedIds.length === 0) return;
+  const correctIds = ['role','context','task','format','constraint'];
+  const allCorrect = droppedIds.length === 5
+    && correctIds.every((id, i) => droppedIds[i] === id);
+  document.getElementById('codeArea').value = allCorrect ? CORRECT_CODE : encodeAnswer(droppedIds);
+  document.getElementById('resultBox').classList.add('visible');
+  document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function copyCode() {
