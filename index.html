@@ -138,11 +138,7 @@
     border: none;
   }
 
-  .preview-overlay {
-    position: absolute;
-    inset: 0;
-    background: transparent;
-  }
+  .preview-overlay { position: absolute; inset: 0; background: transparent; }
 
   .card-body { padding: 1.1rem 1.25rem 1.25rem; }
 
@@ -182,10 +178,7 @@
     justify-content: space-between;
   }
 
-  .card-meta {
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
+  .card-meta { font-size: 0.75rem; color: var(--muted); }
 
   .btn-preview {
     font-family: 'DM Sans', system-ui, sans-serif;
@@ -312,7 +305,7 @@
 </header>
 
 <main>
-  <div class="section-label">Activities</div>
+  <div class="section-label">Activities — 2</div>
 
   <div class="activities-grid">
 
@@ -332,17 +325,31 @@
       </div>
     </div>
 
-    <div class="activity-card coming-soon" style="opacity:0.5; cursor:default;" onclick="">
+    <div class="activity-card" onclick="openModal('Identify Active Learning Strategies', 'identify-strategies.html')">
+      <div class="card-preview">
+        <iframe src="identify-strategies.html" tabindex="-1" aria-hidden="true"></iframe>
+        <div class="preview-overlay"></div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Learning Design</span>
+        <div class="card-title">Identify Active Learning Strategies</div>
+        <p class="card-desc">Read a paragraph about course design and click to identify the three active learning strategies. Includes instant feedback and instructor-readable attempt tracking.</p>
+        <div class="card-footer">
+          <span class="card-meta">Hotspot · Feedback · Decoder</span>
+          <button class="btn-preview" onclick="event.stopPropagation(); openModal('Identify Active Learning Strategies', 'identify-strategies.html')">Preview</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="activity-card" style="opacity:0.45; cursor:default;">
       <div class="card-preview" style="background:#f5f3ef; display:flex; align-items:center; justify-content:center;">
         <span style="font-size:0.85rem; color:#aaa; font-weight:300;">Coming soon</span>
       </div>
       <div class="card-body">
         <span class="card-tag" style="background:#f0ede8; color:#aaa;">In Development</span>
-        <div class="card-title" style="color:#aaa;">Activity 2</div>
+        <div class="card-title" style="color:#aaa;">Activity 3</div>
         <p class="card-desc" style="color:#ccc;">More interactive activities coming soon.</p>
-        <div class="card-footer">
-          <span class="card-meta" style="color:#ccc;">—</span>
-        </div>
+        <div class="card-footer"><span class="card-meta" style="color:#ccc;">—</span></div>
       </div>
     </div>
 
